@@ -139,9 +139,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  // Load local tasks.
-  grunt.loadTasks('tasks');
-
   // Default task.
   grunt.registerTask('default', ['jshint']);
 
