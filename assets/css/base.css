@@ -1,0 +1,14 @@
+*{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+.chromeframe{position:absolute;top:0}
+body{font:13px Helmet,Freesans,sans-serif}
+body,select,input,textarea{color:#333}
+a{color:#03f}
+a:hover{color:#69f}
+::-moz-selection{background:#fcd700;color:#fff;text-shadow:none}
+::selection{background:#fcd700;color:#fff;text-shadow:none}
+a:link{-webkit-tap-highlight-color:#fcd700}
+ins{background-color:#fcd700;color:#000;text-decoration:none}
+mark{background-color:#fcd700;color:#000;font-style:italic;font-weight:bold}
+input:-moz-placeholder{color:#a9a9a9}
+textarea:-moz-placeholder{color:#a9a9a9}
+@media screen and (max-width: 480px){}

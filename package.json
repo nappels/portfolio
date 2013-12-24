@@ -1,0 +1,26 @@
+{
+  "name": "noahappel.me",
+  "description": "Noah Appel's portfolio",
+  "version": "0.1.0",
+  "homepage": "http://noahappel.me",
+  "author": {
+    "name": "Noah Appel",
+    "email": "noah.appel@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-compress": "~0.5.3",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-stylus": "~0.11.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jshint": "~0.7.2"
+  }
+}
