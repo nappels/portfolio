@@ -1,34 +1,46 @@
-// Browser detection for when you get desparate. A measure of last resort.
-// http://rog.ie/post/9089341529/html5boilerplatejs
-
-// var b = document.documentElement;
-// b.setAttribute('data-useragent',  navigator.userAgent);
-// b.setAttribute('data-platform', navigator.platform);
-
-// sample CSS: html[data-useragent*='Chrome/13.0'] { ... }
-
-
 // remap jQuery to $
 (function($){
 
 	/* trigger when page is ready */
 	$(document).ready(function (){
-	
-		// your functions go here
-	
+
+		// Mobile Nav IIFE
+		(function() {
+			
+			var isModalOpen = false;
+
+			var openModal = function() {
+				$('.wrapper').animate({
+						'left': '-300px'
+					},600);
+					// Set toggle to true
+					isModalOpen = true;
+					// Bind a click handler to the wrapper to close the click handler
+					$('.wrapper').on('click', function(){ closeModal(); })
+			};
+			var closeModal = function() {
+				console.log('closeModal');
+				$('.wrapper').animate({
+						'left': '0'
+					},600);
+					// Set toggle key to false
+					isModalOpen = false;
+					// Unbind the click on the wrapper to save memory
+					$('.wrapper').off('click');
+			};
+			var mobileNavToggle = function(e) {
+				// Don't let the click binding bubble up to the wrapper
+				e.stopPropagation();
+				if (!isModalOpen) {
+					openModal();
+				}
+				else {
+					closeModal();
+				}
+			};
+
+			$('.hamburger').stop().click(mobileNavToggle);
+		})();
 	});
-	
-	
-	/* optional triggers
-	
-	$(window).load(function() {
-		
-	});
-	
-	$(window).resize(function() {
-		
-	});
-	
-	*/
 
 })(window.jQuery);
