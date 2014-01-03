@@ -27,6 +27,10 @@ module.exports = function(grunt) {
     // CSS file for debug and release deployments.  
     stylus: {
       compile: {
+        options: { 
+          paths: ["assets/css"],
+          import: [ 'nib' ]
+        },
         files: {
           "assets/css/base.css": ["assets/css/base.styl"]
         }
