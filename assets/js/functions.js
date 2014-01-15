@@ -52,15 +52,17 @@
 		// Nav Scroll IIFE
 		(function() {
 			var lastScrollTop = 0;
+			var scrollIntent;
 			$(window).scroll(function() {
 				var scrollTop = $(this).scrollTop();
 				if (scrollTop > lastScrollTop && $(this).width() > 851) {
 					// Scroll Down
+					scrollIntent = scrollTop - 50;
 					if (scrollTop > 100) {
 						$('.header').slideUp(300);
 					}
 				} 
-				else {
+				else if (scrollTop < scrollIntent) {
 					// Scroll Up
 					$('.header').slideDown(300);
 				}
