@@ -1,5 +1,5 @@
 $black = #2C2223;
-$white = #fcfcfc;
+$white = #fff;
 $blueGreen = rgba(83,119,122,1);
 
 *
@@ -9,11 +9,11 @@ $blueGreen = rgba(83,119,122,1);
   position: absolute; top: 0;
 
 body
-  font: 13px Helmet, Freesans, sans-serif;
+  font: 13px 'Gudea', Freesans, sans-serif;
 
 body
 html
-  background:#fcfcfc;
+  background:$white;
 
 body, select, input, textarea
   color: $black;
@@ -25,12 +25,12 @@ a:hover
 
 ::-moz-selection
   background: #3584D8;
-  color: #fff;
+  color: $white;
   text-shadow: none;
 
 ::selection
   background: #3584D8;
-  color: #fff;
+  color: $white;
   text-shadow: none; 
 
 a:link
@@ -52,6 +52,22 @@ input:-moz-placeholder
 textarea:-moz-placeholder
    color:#a9a9a9;
 
+// Sprite
+.social
+  background-image: url(../images/social.png);
+
+  @media all and (-webkit-min-device-pixel-ratio: 1.5)
+    background-image: url(../images/social@2x.png);
+    background-size: 78px 72px;
+
+.iconTwitter{background-position:0px 0px;width:42px;height:36px;}
+.iconLinkedIn{background-position:-42px 0px;width:37px;height:36px;}
+.iconGithub{background-position:0px -36px;width:23px;height:36px;}
+.iconFacebook{background-position:-23px -36px;width:23px;height:36px;}
+
+*
+  transition:all .5s ease;
+
 section
   width:100%;
   padding:40px 0;
@@ -60,7 +76,7 @@ section
 
 .center
   margin:0 auto;
-  width:96%;
+  width:90%;
   text-align:center;
 
   @media only screen and (min-width: 1000px)
@@ -71,20 +87,38 @@ section
   font-size:3.5em;
 
 .h2
-  font-size: 1.6em;
-  margin-bottom: 10px;
+  font-size: 2em;
+  margin-bottom: 20px;
   font-weight:bold;
+  color:#666;
 
 .h3
   font-size:1.6em;
   font-weight:normal;
 
 .sh1
-  font-size:1.2em;
+  font-size:1.6em;
   font-weight:bold;
-  padding-bottom:12px;
-  border-bottom:1px dotted #e4e4e4;
-  margin-bottom:12px;
+  // padding-bottom:12px;
+  // border-bottom:3px solid #DC5E35;
+  margin:10px auto 20px;
+
+.hr
+  width:50px;
+  height:4px;
+  border-radius:2px;
+  margin:0 auto 60px;
+  background:#e4e4e4;
+
+  &.orange
+    // background:rgba(220,94,53,0.6);
+    // background:#999;
+    height:2px;
+    margin-bottom:20px;
+    width:60%;
+
+  &.dark
+    background:#999;
 
 .wrapper
   position: relative;
@@ -97,8 +131,9 @@ section
   width:100%;
   float:left;
   height:80px;
-  background:$white;
+  background:#f8f8f8;
   border:1px solid #e4e4e4;
+  z-index:10;
 
   @media only screen and (min-width:850px)
     position:fixed;
@@ -184,7 +219,7 @@ section
 
   .h1
   .h3
-    color:#fcfcfc;
+    color:$white;
     margin:20px auto 0;
     width:85%
 
@@ -197,117 +232,320 @@ section
 
 .skills
   .skillBox
-    height:400px;
     border:1px solid #e4e4e4;
     width: 100%;
     margin:0 auto 15px;
-    padding:12px;
+    padding:12px 0 20px;
     line-height:200%;
     border-radius:4px;
-    background: linear-gradient(top,#fcfcfc,#f8f8f8)
+    // display:none;
+    background: #fcfcfc;
     
     @media only screen and (min-width: 450px)
       width:75%;
 
     @media only screen and (min-width: 750px)
       float:left;
+      height:460px;
       width:30%;
       margin-left:2.5%;
 
     .skill1
     .skill2
     .skill3
+      font-size:1.2em;
       // text-shadow: 0px 1px 1px #ccc;
 
-    .skill1
-      font-size:1.4em;
+    // .skill1
+    //   font-size:1.4em;
 
-    .skill2
-      font-size:1.2em;
+    // .skill2
+    //   font-size:1.2em;
+
+    .skillSvg
+      height:32px;
+      margin-top:10px;
 
 .work
-  background:#f8f8f8;
+  background:#ebf0f1;
   width:100%;
+
+  .center
+    width:100%;
+    
+    @media only screen and (min-width: 920px)
+      width:90%;
+
+    @media only screen and (min-width: 1000px)
+      width:960px;
 
   &Section
     width:100%;
     clear:both;
+    margin:0 auto 100px;
 
-    &Info a
-      font-size: 1.4em;
-      text-decoration: none;
-      color: #777;
+    @media only screen and (min-width: 640px)
+      width:600px;
+
+    @media only screen and (min-width: 920px)
+      width:100%;
+      float:left;
+
+    &Example
+      clear:both;
+
+      @media only screen and (min-width: 920px)
+        clear:none;
+
+      .iPhone
+        height:280px;
+        width:133px;
+        margin:0 auto;
+
+        @media only screen and (min-width: 640px)
+          position: absolute;
+        
+      
+      .iPad
+      .macBookPro
+        display:none;
+
+        @media only screen and (min-width: 640px)
+          display:block;
+
+    &Info
+      margin-bottom:40px;
+
+      @media only screen and (min-width: 920px)
+        margin-bottom:0;
+
+      a
+        font-size: 1.4em;
+        text-decoration: none;
+        color: #777;
 
     &Header
-      margin-top:110px;
       font-size:6em;
+      
+      @media only screen and (min-width: 920px)
+        margin-top:110px;
 
-
-  
   #kickbit
     .workSection
       &Info
-        float:left;
+        @media only screen and (min-width: 920px)
+          float:left;
 
       &Example
-        float:right;
+        position:relative;
+
+        @media only screen and (min-width: 920px)
+          float:right;
 
         .macBookPro
-          background:url(../images/kickbitMacBookPro.png);
+          background:url(../images/kickbitMacBookProFlat.jpg);
           width:600px;
-          height:386px;
+          height:311px;
 
           @media all and (-webkit-min-device-pixel-ratio: 1.5)
-            background: url(../images/kickbitMacBookPro@2x.png);
-            background-size:600px 386px;
+            background: url(../images/kickbitMacBookProFlat@2x.jpg);
+            background-size:600px 311px;
+
+        .iPhone
+          background:url(../images/kickbitIphoneFlatLg.jpg);
+          width:267px;
+          height:560px;
+          top: 50px;
+          right: 0;
+
+          @media all and (-webkit-min-device-pixel-ratio: 1.5)
+            background: url(../images/kickbitIphoneFlatLg@2x.jpg);
+            background-size:267px 560px;
+
+          @media only screen and (min-width: 640px)
+            background:url(../images/kickbitIphoneFlat.png);
+            height:280px;
+            width:133px;
+
+            @media all and (-webkit-min-device-pixel-ratio: 1.5)
+              background: url(../images/kickbitIphoneFlat@2x.png);
+              background-size:133px 280px;
 
   #aquto
     .workSection
       &Info
-        float:right;
-      
+        @media only screen and (min-width: 920px)
+          float:right;
+
       &Example
-        float:left;
+        position:relative;
+
+        @media only screen and (min-width: 920px)
+          float:left;
 
         .macBookPro
-          background:url(../images/aqutoMacBookPro.png);
+          background:url(../images/aqutoMacBookProFlat.jpg);
           width:600px;
-          height:386px;
+          height:311px;
 
           @media all and (-webkit-min-device-pixel-ratio: 1.5)
-            background: url(../images/aqutoMacBookPro@2x.png);
-            background-size:600px 386px;
+            background: url(../images/aqutoMacBookProFlat@2x.jpg);
+            background-size:600px 311px;
+
+        .iPhone
+          background:url(../images/aqutoIphoneFlatLg.jpg);
+          width:267px;
+          height:560px;
+          top: 50px;
+          left: 0;
+
+          @media all and (-webkit-min-device-pixel-ratio: 1.5)
+            background: url(../images/aqutoIphoneFlatLg@2x.jpg);
+            background-size:267px 560px;
+
+          @media only screen and (min-width: 640px)
+            background:url(../images/aqutoIphoneFlat.png);
+            height:280px;
+            width:133px;
+
+            @media all and (-webkit-min-device-pixel-ratio: 1.5)
+              background: url(../images/aqutoIphoneFlat@2x.png);
+              background-size:133px 280px;
 
   #kickbitApp
-    .workSectionInfo
-      float:left;
+    margin-bottom:20px;
+    .workSection
+
+      &Info
+        @media only screen and (min-width: 920px)
+          float:left;
+
+      &Example
+        position:relative;
+
+        @media only screen and (min-width: 920px)
+          float:right;
+          margin-right:21px;
+
+        .iPad
+          background:url(../images/kickbitAppIpadFlat.jpg);
+          width:347px;
+          height:450px;
+
+          @media all and (-webkit-min-device-pixel-ratio: 1.5)
+            background: url(../images/kickbitAppIpadFlat@2x.jpg);
+            background-size:347px 450px;
+
+        .iPhone
+          background:url(../images/kickbitAppIphoneFlatLg.jpg);
+          width:267px;
+          height:560px;
+          bottom: -23px;
+          right: -21px;
+
+          @media all and (-webkit-min-device-pixel-ratio: 1.5)
+            background: url(../images/kickbitAppIphoneFlatLg@2x.jpg);
+            background-size:267px 560px;
+
+          @media only screen and (min-width: 640px)
+            background:url(../images/kickbitAppIphoneFlat.png);
+            height:280px;
+            width:133px;
+
+            @media all and (-webkit-min-device-pixel-ratio: 1.5)
+              background: url(../images/kickbitAppIphoneFlat@2x.png);
+              background-size:133px 280px;
   
 
+  #kickbitApp
+    &.workSection
+      @media only screen and (min-width: 640px)
+        width:400px;
 
-
-
+      @media only screen and (min-width: 920px)
+        width:100%;
+        float:left;
+  
 .contact
-  background:#000;
+  background:#30393e;
   color:#fcfcfc;
   width:100%;
+  
+  .h2
+    color:#fcfcfc;
 
-  form div
-    margin: 10px auto;
+  .socialWrapper
+    width:320px;
+    margin:0 auto;
+
+    &:after
+      content:"";
+      clear:both;
+      float:left;
+      margin:20px 0;
+
+    &Icon
+      border:2px solid #fff;
+      height:70px;
+      width:70px;
+      float:left;
+      border-radius:50px;
+      margin-right:10px;
+      cursor:pointer;
+
+      &.facebook
+        padding:15px 0 0 20px;
+
+        @media only screen and (min-width: 750px)
+          &:hover
+            background:#3B5998;
+            border-color:#3B5998;
+
+      &.twitter
+        padding:16px 0 0 14px;
+
+        @media only screen and (min-width: 750px)
+          &:hover
+            background:#55ACEE;
+            border-color:#55ACEE;
+
+      &.github
+        padding:16px 0 0 21px;
+
+        @media only screen and (min-width: 750px)
+          &:hover
+            background:#FFC09F;
+            border-color:#FFC09F;
+
+      &.linkedIn
+        padding:14px 0 0 17px;
+
+        @media only screen and (min-width: 750px)
+          &:hover
+            background:#4875B4;
+            border-color:#4875B4;
+
+  form
+    clear:both;
+
+    div
+      margin: 10px auto;
 
 .submit
 .textarea
 .input
-  padding: 15px;
-  width: 300px;
+  padding: 20px;
+  width: 360px;
   border-radius: 2px;
   border: none;
-  background: #e4e4e4;
+  background: #f2f2f2;
   line-height: 150%;
   font-size: 1.4em;
   outline:none;
 
 .textarea
   height:120px;
+
 
 
 
