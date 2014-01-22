@@ -225,23 +225,24 @@
 				</a>
 			</div>
 
-			<form action="https://docs.google.com/forms/d/1Ab6Y_X6h5lrxDfkKWQ9pYCFAU2B-lBq9Xh_FP_br5xw/formResponse" method="POST" id="ss-form">
+			<form action="assets/libs/formmail.php" method="POST" id="ss-form">
+				<input type="hidden" name="recipients" value="noah.appel_*_gmail.com" />
+     		<input type="hidden" name="subject" value="Portfolio Inquiry" />
+				<input type="hidden" name="good_url" value="http://noahappel.me#contact" />
 				<div>
-					<!-- <input type="text" name="name" class="input name" placeholder="Name"> -->
-					<input type="text" name="entry.535084566" value="" class="ss-q-short valid input name" id="entry_535084566" dir="auto" aria-label="Name  " title="" placeholder="Name">
+					<input type="text" name="name" class="input name" placeholder="Name">
 				</div>
 				<div>
-					<input type="text" name="entry.784637672" value="" class="ss-q-short valid input email" id="entry_784637672" dir="auto" aria-label="Email  " title="" placeholder="Email">
-					<!-- <input type="email" name="email" class="input email" placeholder="Email"> -->
+					<input type="email" name="email" class="input email" placeholder="Email">
 				</div>
 				<div>
-					<textarea name="entry.546601" rows="8" cols="0" class="ss-q-long valid textarea comments" id="entry_546601" dir="auto" aria-label="Comments  " placeholder="Comments"></textarea>
-					<!-- <textarea name="comments" class="textarea comments" placeholder="Comments"></textarea> -->
+					<textarea name="comments" class="textarea comments" placeholder="Comments"></textarea>
 				</div>
 				<div>
 					<input type="submit" class="submit" value="Send">
 				</div>
 			</form>
+			<div class="thankYou">Inquiry submitted</div>
 		</div>
 	</section>
 

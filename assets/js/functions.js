@@ -62,7 +62,7 @@
 			var scrollIntent;
 			$(window).scroll(function() {
 				var scrollTop = $(this).scrollTop();
-				if (scrollTop > lastScrollTop && $(this).width() > 851) {
+				if (scrollTop > lastScrollTop) {
 					// Scroll Down
 					scrollIntent = scrollTop - 50;
 					if (scrollTop > 100) {
@@ -95,6 +95,44 @@
 			});
 		})();
 
+		//Form submit IIFE
+		(function() {
+
+			// After form submition, hide the form
+			if (window.location.search.indexOf('PHPSESSID') > -1) {
+				$('#ss-form').hide();
+				$('.thankYou').show();	
+			}
+			
+			var validate = function(data) {
+				data = data || {};
+
+				var valid = true;
+
+				$.each(data, function(x,i) {
+					if (!$(i).val()) {
+						$(i).addClass('error');
+						valid = false;
+					}
+				});
+				return valid;
+
+			};
+			$('#ss-form').submit(function() {
+				var formData = {
+					name: $('.name'),
+					email: $('.email'),
+					comments: $('.comments')
+				};
+				if (validate(formData)) {
+					return true;
+				}
+				return false;
+			}).on('focus','.error', function() {
+				$(this).removeClass('error');
+			});
+
+		})();
 	});
 
 })(window.jQuery);
