@@ -5,7 +5,6 @@
 <!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<!-- the "no-js" class is for Modernizr. --> 
 
 <head>
 
@@ -31,6 +30,13 @@
 	<link rel="stylesheet" href="assets/css/index.css" />
 
 	<script src="assets/libs/respond.js"></script>
+	<!--[if lt IE 9]>
+   <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+   </script>
+<![endif]-->
 
 </head>
 
@@ -230,12 +236,15 @@
      		<input type="hidden" name="subject" value="Portfolio Inquiry" />
 				<input type="hidden" name="good_url" value="http://noahappel.me#contact" />
 				<div>
+					<label for="name" class="label">Name</label>
 					<input type="text" name="name" class="input name" placeholder="Name">
 				</div>
 				<div>
+					<label for="email" class="label">Email</label>
 					<input type="email" name="email" class="input email" placeholder="Email">
 				</div>
 				<div>
+					<label for="comments" class="label">Comments</label>
 					<textarea name="comments" class="textarea comments" placeholder="Comments"></textarea>
 				</div>
 				<div>
