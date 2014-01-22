@@ -35,39 +35,55 @@
 </head>
 
 <body>
-<div class="modal"></div>
+<div class="modal">
+	<div class="closeModal">x</div>
+	<nav class="mobile">
+		<ul class="nav">
+			<li class="navItem" data-section="skills">Skills</li>
+			<li class="navItem" data-section="work">Recent Work</li>
+			<li class="navItem" data-section="contact">Contact</li>
+		</ul>
+	</nav>
+</div>
 <div class="wrapper">
 	
 	<header class="header">
-		<div class="hamburger">
-			<span class="bun"></span>
-			<span class="bun"></span>
-			<span class="bun"></span>
+		<div class="inner">
+			<div class="hamburger">
+				<span class="bun"></span>
+				<span class="bun"></span>
+				<span class="bun"></span>
+			</div>
+			<div class="logo">
+				<div class="nLogoWrapper">
+					<span class="nLogo">n</span>
+				</div>
+				<span class="home">noahappel.me</span>
+			</div>
+			<nav>	
+				<ul class="nav">
+					<li class="navItem" data-section="skills">Skills</li>
+					<li class="navItem" data-section="work">Recent Work</li>
+					<li class="navItem" data-section="contact">Contact</li>
+				</ul>
+			</nav>
 		</div>
-		<div class="logo">
-			<span class="nLogo">n</span>
-			<span class="home">noahappel.me</span>
-		</div>
-		<nav>	
-			<ul class="nav">
-				<li class="navItem">Skills</li>
-				<li class="navItem">Recent Work</li>
-				<li class="navItem">Contact</li>
-			</ul>
-		</nav>
 	</header>
 
 	<section class="top">
 		<div class="center">
-			<div class="gravatarWrapper">
-				<img class="gravatar" src="#">
+			<div class="gravatarHeight">
+				<div class="gravatarWrapper">
+					<img class="gravatar" src="#">
+				</div>
 			</div>
 			<h1 class="h1">Noah Appel</h1>
-			<h3 class="h3">Full stack web developer with passion for user experience, developing pixel-perfect user interfaces, and serving up and digesting APIs and services to create dynamic web and hybrid apps.</h3>
+			<!-- Full stack web developer with a passion for influencing users into  -->
+			<h3 class="h3">Full stack web developer with a passion for user experience, a drive to develop pixel-perfect user interfaces, and an apitite for architecting the underneath service layer</h3>
 		</div>
 	</section>
 
-	<section class="skills">
+	<section id="skills" class="skills">
 		<div class="center">
 
 			<div class="h2">Skills</div>
@@ -139,7 +155,7 @@
 		</div>
 	</section>
 
-	<section class="work">
+	<section id="work" class="work">
 		<div class="center">
 
 			<div class="h2">Recent Work</div>
@@ -148,7 +164,7 @@
 			<div class="workSection" id="kickbit">
 				<div class="workSectionInfo">
 					<div class="workSectionHeader">Kickbit</div>
-					<a href="https://www.kickbit.com">www.kickbit.com</a>
+					<a href="https://www.kickbit.com" target="_blank">www.kickbit.com</a>
 				</div>
 				<div class="workSectionExample">
 					<div class="macBookPro"></div>
@@ -159,7 +175,7 @@
 			<div class="workSection" id="aquto">
 				<div class="workSectionInfo">
 					<div class="workSectionHeader">Aquto</div>
-					<a href="https://www.aquto.com">www.aquto.com</a>
+					<a href="http://www.aquto.com" target="_blank">www.aquto.com</a>
 				</div>
 				<div class="workSectionExample">
 					<div class="macBookPro"></div>
@@ -170,7 +186,7 @@
 			<div class="workSection" id="kickbitApp">
 				<div class="workSectionInfo">
 					<div class="workSectionHeader">Kickbit App</div>
-					<a href="https://itunes.apple.com/us/app/kickbit/id599739399?mt=8">App Store</a>
+					<a href="https://itunes.apple.com/us/app/kickbit/id599739399?mt=8" target="_blank">App Store</a>
 				</div>
 				<div class="workSectionExample">
 					<div class="iPad"></div>
@@ -181,7 +197,7 @@
 		</div>
 	</section>
 
-	<section class="contact">
+	<section id="contact" class="contact">
 		<div class="center">
 			<div class="h2">Contact</div>
 			<div class="hr white"></div>
@@ -201,18 +217,21 @@
 				</div>
 			</div>
 
-			<form action="#">
+			<form action="https://docs.google.com/forms/d/1Ab6Y_X6h5lrxDfkKWQ9pYCFAU2B-lBq9Xh_FP_br5xw/formResponse" method="POST" id="ss-form">
 				<div>
 					<input type="text" name="name" class="input name" placeholder="Name">
+					<!-- <input type="text" name="entry.535084566" value="" class="ss-q-short valid" id="entry_535084566" dir="auto" aria-label="Name  " title=""> -->
 				</div>
 				<div>
+					<!-- <input type="text" name="entry.784637672" value="" class="ss-q-short valid" id="entry_784637672" dir="auto" aria-label="Email  " title=""> -->
 					<input type="email" name="email" class="input email" placeholder="Email">
 				</div>
 				<div>
+					<!-- <textarea name="entry.546601" rows="8" cols="0" class="ss-q-long valid" id="entry_546601" dir="auto" aria-label="Comments  "></textarea> -->
 					<textarea name="comments" class="textarea comments" placeholder="Comments"></textarea>
 				</div>
 				<div>
-					<input type="submit" class="submit">
+					<input type="submit" class="submit" value="Send">
 				</div>
 			</form>
 		</div>
