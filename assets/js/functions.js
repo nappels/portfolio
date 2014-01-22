@@ -4,42 +4,49 @@
 	/* trigger when page is ready */
 	$(document).ready(function (){
 
-		// Mobile Nav IIFE
-		(function() {
-
+		// Mobile Nav Module
+		var openModal = (function() {
 			var isModalOpen = false;
 
-			var openModal = function() {
-				$('.wrapper').animate({
+			return {
+				open: function() {
+					var self = this;
+					$('.wrapper').animate({
 						'left': '-235px'
 					},400);
 					// Set toggle to true
 					isModalOpen = true;
 					// Bind a click handler to the wrapper to close the click handler
-					$('.wrapper').on('click', function(){ closeModal(); })
-			};
-			var closeModal = function() {
-				$('.wrapper').animate({
+					$('.wrapper').on('click', function(){ self.close(); })
+				},
+				close: function() {
+					$('.wrapper').animate({
 						'left': '0'
 					},400);
 					// Set toggle key to false
 					isModalOpen = false;
 					// Unbind the click on the wrapper to save memory
 					$('.wrapper').off('click');
-			};
-			var mobileNavToggle = function(e) {
-				// Don't let the click binding bubble up to the wrapper
-				e.stopPropagation();
-				if (!isModalOpen) {
-					openModal();
+				},
+				mobileNavToggle: function(e) {
+					// Don't let the click binding bubble up to the wrapper
+					e.stopPropagation();
+					if (!isModalOpen) {
+						this.open();
+					}
+					else {
+						this.close();
+					}
 				}
-				else {
-					closeModal();
-				}
 			};
-
-			$('.hamburger').stop().click(mobileNavToggle);
 		})();
+
+		$('.hamburger').stop().click(function(e) {
+			openModal.mobileNavToggle(e);
+		});
+		$('.closeModal').click(function() {
+			openModal.close();
+		});	
 
 		// Gravatar IIFE
 		(function() {
@@ -49,7 +56,7 @@
 			$('.gravatar').attr('src','http://www.gravatar.com/avatar/' + md5Email + '.jpg?s=' + size)
 		})();
 
-		// Nav Scroll IIFE
+		// Nav Hide IIFE
 		(function() {
 			var lastScrollTop = 0;
 			var scrollIntent;
@@ -69,6 +76,41 @@
 				lastScrollTop = scrollTop;
 			});
 		})();
+
+		// Nav Scroll IIFE
+		(function() {
+			$('.navItem').click(function() {
+				var section = $(this).data('section');
+				$('html, body').animate({
+					scrollTop: $('#' + section).offset().top
+				});
+			});
+			$('.logo').click(function() {
+				$('html, body').animate({
+					scrollTop: 0
+				});
+			});
+			$('.mobile .navItem').click(function() {
+				openModal.close();
+			})
+		})();
+
+		// Parallax
+		// (function() {
+		// 	var $window = $(window);
+		// 	var velocity = 0.1; 
+
+		// 	function update() { 
+		// 		var pos = $window.scrollTop();
+		// 		$('.macBookPro').each(function() { 
+		// 			var $element = $(this);
+		// 			var height = $element.height();
+		// 			$(this).css('backgroundPosition', '50% ' + Math.round((height - pos + 1000) * velocity) + 'px'); 
+		// 		}); 
+		// 	}; 
+
+		// 	$window.bind('scroll', update);
+		// })();
 	});
 
 })(window.jQuery);
