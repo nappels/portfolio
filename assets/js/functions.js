@@ -17,7 +17,7 @@
 					// Set toggle to true
 					isModalOpen = true;
 					// Bind a click handler to the wrapper to close the click handler
-					$('.wrapper').on('click', function(){ self.close(); })
+					$('.wrapper').on('click', function(){ self.close(); });
 				},
 				close: function() {
 					$('.wrapper').animate({
@@ -53,7 +53,7 @@
 			var md5Email = 'aec6e5136a0c26f669ba569e72a153a8';
 			var size = 150;
 
-			$('.gravatar').attr('src','http://www.gravatar.com/avatar/' + md5Email + '.jpg?s=' + size)
+			$('.gravatar').attr('src','http://www.gravatar.com/avatar/' + md5Email + '.jpg?s=' + size);
 		})();
 
 		// Nav Hide IIFE
@@ -92,25 +92,8 @@
 			});
 			$('.mobile .navItem').click(function() {
 				openModal.close();
-			})
+			});
 		})();
-
-		// Parallax
-		// (function() {
-		// 	var $window = $(window);
-		// 	var velocity = 0.1; 
-
-		// 	function update() { 
-		// 		var pos = $window.scrollTop();
-		// 		$('.macBookPro').each(function() { 
-		// 			var $element = $(this);
-		// 			var height = $element.height();
-		// 			$(this).css('backgroundPosition', '50% ' + Math.round((height - pos + 1000) * velocity) + 'px'); 
-		// 		}); 
-		// 	}; 
-
-		// 	$window.bind('scroll', update);
-		// })();
 	});
 
 })(window.jQuery);
