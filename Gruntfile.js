@@ -148,4 +148,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('server', ['stylus', 'concat', 'connect:server', 'watch']);
 
+  grunt.registerTask('build', ['jshint', 'concat', 'clean', 'copy', 'uglify', 'cssmin']);
+
 };
