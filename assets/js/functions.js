@@ -14,6 +14,9 @@
 					$('.wrapper').animate({
 						'left': '-235px'
 					},400);
+					$('.header').animate({
+						'left': '-235px'
+					},400);
 					// Set toggle to true
 					isModalOpen = true;
 					// Bind a click handler to the wrapper to close the click handler
@@ -21,6 +24,9 @@
 				},
 				close: function() {
 					$('.wrapper').animate({
+						'left': '0'
+					},400);
+					$('.header').animate({
 						'left': '0'
 					},400);
 					// Set toggle key to false
