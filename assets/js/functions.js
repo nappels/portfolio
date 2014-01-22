@@ -94,6 +94,7 @@
 				openModal.close();
 			});
 		})();
+
 	});
 
 })(window.jQuery);

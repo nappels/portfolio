@@ -438,6 +438,7 @@ section
 
           @media only screen and (min-width: 640px)
             background-image:url(../images/kickbitIphoneFlat.png);
+            background-size:133px 280px;
             height:280px;
             width:133px;
 
@@ -479,6 +480,7 @@ section
 
           @media only screen and (min-width: 640px)
             background:url(../images/aqutoIphoneFlat.png);
+            background-size:133px 280px;
             height:280px;
             width:133px;
 
@@ -523,6 +525,7 @@ section
 
           @media only screen and (min-width: 640px)
             background:url(../images/kickbitAppIphoneFlat.png);
+            background-size:133px 280px;
             height:280px;
             width:133px;
 
@@ -570,7 +573,8 @@ section
       border-radius:50px;
       margin-right:10px;
       cursor:pointer;
-      transition:none;
+      transition:background .4s;
+      transition:border-color .2s;
 
       &.facebook
         padding:15px 0 0 20px;
@@ -637,6 +641,9 @@ section
   outline:none;
   box-sizing:border-box;
 
+  &:focus
+    background:#e4e4e4;
+
   @media only screen and (min-width:420px)
     width:380px;  
 
@@ -646,6 +653,7 @@ section
 .submit
   border-bottom: 6px solid #bbb;
   font-weight: bold;
+  appearance: none;
 
 
 
