@@ -1,7 +1,6 @@
 // remap jQuery to $
 (function($){
 
-	/* trigger when page is ready */
 	$(document).ready(function (){
 
 		// Mobile Nav Module
@@ -52,17 +51,9 @@
 		});
 		$('.closeModal').click(function() {
 			openModal.close();
-		});	
+		});
 
-		// Gravatar IIFE
-		(function() {
-			var md5Email = 'aec6e5136a0c26f669ba569e72a153a8';
-			var size = 150;
-
-			$('.gravatar').attr('src','http://www.gravatar.com/avatar/' + md5Email + '.jpg?s=' + size);
-		})();
-
-		// Nav Hide IIFE
+		// Nav Hide
 		(function() {
 			var lastScrollTop = 0;
 			var scrollIntent;
@@ -74,7 +65,7 @@
 					if (scrollTop > 100) {
 						$('.header').slideUp(300);
 					}
-				} 
+				}
 				else if (scrollTop < scrollIntent) {
 					// Scroll Up
 					$('.header').slideDown(300);
@@ -83,7 +74,7 @@
 			});
 		})();
 
-		// Nav Scroll IIFE
+		// Nav Scroll
 		(function() {
 			$('.navItem').click(function() {
 				var section = $(this).data('section');
@@ -101,15 +92,15 @@
 			});
 		})();
 
-		//Form submit IIFE
+		//Form submit
 		(function() {
 
 			// After form submition, hide the form
 			if (window.location.search.indexOf('PHPSESSID') > -1) {
 				$('#ss-form').hide();
-				$('.thankYou').show();	
+				$('.thankYou').show();
 			}
-			
+
 			var validate = function(data) {
 				data = data || {};
 
@@ -139,6 +130,17 @@
 			});
 
 		})();
+
+		// Work show more
+		(function() {
+
+			$('.workSection .hamburger, .workSection .close').click(function() {
+				$(this).parent('.workSection').toggleClass('showing-more');
+			});
+
+		})();
+
+
 	});
 
 })(window.jQuery);
