@@ -106,7 +106,7 @@ module.exports = function(grunt) {
       },
       cname: {
         files: [
-          {expand: true, src: ['./CNAME'], dest: 'dist/CNAME'}
+          {expand: false, src: ['./CNAME'], dest: 'dist/CNAME'}
         ]
       }
       // fonts: {
