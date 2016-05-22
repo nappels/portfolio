@@ -6,13 +6,13 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    // The clean task ensures all files are removed from the dist/code/ directory so
+    // The clean task ensures all files are removed from the dist/ directory so
     // that no files linger from previous builds.
     clean: {
       build: ["dist/*"],
-      code: ["dist/code/*"]
+      code: ["dist/*"]
     },
-    
+
     concat: {
       css: {
         src: [
@@ -24,10 +24,10 @@ module.exports = function(grunt) {
     },
 
     // The stylus task is used to compile Stylus stylesheets into a single
-    // CSS file for debug and release deployments.  
+    // CSS file for debug and release deployments.
     stylus: {
       compile: {
-        options: { 
+        options: {
           paths: ["assets/css"],
           import: [ 'nib' ]
         },
@@ -39,15 +39,15 @@ module.exports = function(grunt) {
 
     // Minify the functions.js file in the dist directory.
     uglify: {
-      "dist/code/assets/js/functions.js": [
-        "dist/code/assets/js/functions.js"
+      "dist/assets/js/functions.js": [
+        "dist/assets/js/functions.js"
       ]
     },
-    
+
     // Minify the index.css file in the dist directory.
     cssmin: {
-      "dist/code/assets/css/index.css": [
-        "dist/code/assets/css/index.css"
+      "dist/assets/css/index.css": [
+        "dist/assets/css/index.css"
       ]
     },
 
@@ -76,32 +76,32 @@ module.exports = function(grunt) {
     copy: {
       html: {
         files: {
-          "dist/code/": "index.html"
+          "dist/": "index.html"
         }
       },
       images: {
         files: [
-          {expand: true, src: ['assets/images/**'], dest: 'dist/code/'}
+          {expand: true, src: ['assets/images/**'], dest: 'dist/'}
         ]
       },
       css: {
         files: [
-          {expand: true, src: ['assets/css/index.css'], dest: 'dist/code/'}
+          {expand: true, src: ['assets/css/index.css'], dest: 'dist/'}
         ]
       },
       js: {
         files: [
-          {expand: true, src: ['assets/js/**'], dest: 'dist/code/'}
+          {expand: true, src: ['assets/js/**'], dest: 'dist/'}
         ]
       },
       libs: {
         files: [
-          {expand: true, src: ['assets/libs/**'], dest: 'dist/code/'}
+          {expand: true, src: ['assets/libs/**'], dest: 'dist/'}
         ]
       }
       // fonts: {
       //   files: [
-      //     {expand: true, src: ['assets/fonts/**'], dest: 'dist/code/'}
+      //     {expand: true, src: ['assets/fonts/**'], dest: 'dist/'}
       //   ]
       // }
 
@@ -130,7 +130,7 @@ module.exports = function(grunt) {
   });
 
 
-  
+
   // load grunt-contrib tasks
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
