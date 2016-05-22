@@ -98,6 +98,16 @@ module.exports = function(grunt) {
         files: [
           {expand: true, src: ['assets/libs/**'], dest: 'dist/'}
         ]
+      },
+      examples: {
+        files: [
+          {expand: true, src: ['assets/examples/**'], dest: 'dist/'}
+        ]
+      },
+      cname: {
+        files: [
+          {expand: true, src: ['./CNAME'], dest: 'dist/CNAME'}
+        ]
       }
       // fonts: {
       //   files: [
