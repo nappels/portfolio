@@ -58,11 +58,18 @@ mark
   font-style: italic;
   font-weight: bold;
 
-input:-moz-placeholder
-   color:#a9a9a9;
+::-webkit-input-placeholder
+  color: #aaa;
 
-textarea:-moz-placeholder
-   color:#a9a9a9;
+::-moz-placeholder
+  color: #aaa;
+
+:-ms-input-placeholder
+  color: #aaa;
+
+:-moz-placeholder
+  color: #aaa;
+
 
 // Sprite
 .social
@@ -502,7 +509,7 @@ section
       @media only screen and (min-width: 920px)
         margin-top:110px;
 
-  #kickbit
+  #timyo
     .workSection
       &Info
         @media only screen and (min-width: 920px)
@@ -515,36 +522,36 @@ section
           float:right;
 
         .macBookPro
-          background:url(../images/kickbitMacBookProFlat.jpg) center 0 no-repeat;
+          background:url(../images/timyoMacBookPro.jpg) center 0 no-repeat;
           width:600px;
           height:311px;
 
           @media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)
-            background-image: url(../images/kickbitMacBookProFlat@2x.jpg);
+            background-image: url(../images/timyoMacBookPro@2x.jpg);
             background-size:600px 311px;
 
         .iPhone
-          background:url(../images/kickbitIphoneFlatLg.jpg) center 0 no-repeat;
+          background:url(../images/timyoIphoneLg.jpg) center 0 no-repeat;
           width:267px;
           height:560px;
           top: 50px;
           right: 0;
 
           @media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)
-            background-image: url(../images/kickbitIphoneFlatLg@2x.jpg);
+            background-image: url(../images/timyoIphoneLg@2x.jpg);
             background-size:267px 560px;
 
           @media only screen and (min-width: 640px)
-            background-image:url(../images/kickbitIphoneFlat.png);
+            background-image:url(../images/timyoIphone.png);
             background-size:133px 280px;
             height:280px;
             width:133px;
 
             @media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)
-              background-image: url(../images/kickbitIphoneFlat@2x.png);
+              background-image: url(../images/timyoIphone@2x.png);
               background-size:133px 280px;
 
-  #aquto
+  #gigster
     &.workSection
       .hamburger
         right: 0;
@@ -564,91 +571,41 @@ section
           float:left;
 
         .macBookPro
-          background:url(../images/aqutoMacBookProFlat.jpg) center 0 no-repeat;
+          background:url(../images/gigsterMacBookPro.jpg) center 0 no-repeat;
           width:600px;
           height:311px;
 
           @media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)
-            background-image: url(../images/aqutoMacBookProFlat@2x.jpg);
+            background-image: url(../images/gigsterMacBookPro@2x.jpg);
             background-size:600px 311px;
 
         .iPhone
-          background:url(../images/aqutoIphoneFlatLg.jpg);
+          background:url(../images/gigsterIphoneLg.jpg);
           width:267px;
           height:560px;
           top: 50px;
           left: 0;
 
           @media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)
-            background: url(../images/aqutoIphoneFlatLg@2x.jpg);
+            background: url(../images/gigsterIphoneLg@2x.jpg);
             background-size:267px 560px;
 
           @media only screen and (min-width: 640px)
-            background:url(../images/aqutoIphoneFlat.png);
+            background:url(../images/gigsterIphone.png);
             background-size:133px 280px;
             height:280px;
             width:133px;
 
             @media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)
-              background: url(../images/aqutoIphoneFlat@2x.png);
+              background: url(../images/gigsterIphone@2x.png);
               background-size:133px 280px;
-
-  #kickbitApp
-    margin-bottom:20px;
-    .workSection
-
-      &Info
-        @media only screen and (min-width: 920px)
-          float:left;
-
-      &Example
-        position:relative;
-
-        @media only screen and (min-width: 920px)
-          float:right;
-          margin-right:21px;
-
-        .iPad
-          background:url(../images/kickbitAppIpadFlat.jpg);
-          width:347px;
-          height:450px;
-
-          @media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)
-            background: url(../images/kickbitAppIpadFlat@2x.jpg);
-            background-size:347px 450px;
-
-        .iPhone
-          background:url(../images/kickbitAppIphoneFlatLg.jpg);
-          width:267px;
-          height:560px;
-          bottom: -23px;
-          right: -21px;
-
-          @media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)
-            background: url(../images/kickbitAppIphoneFlatLg@2x.jpg);
-            background-size:267px 560px;
-
-          @media only screen and (min-width: 640px)
-            background:url(../images/kickbitAppIphoneFlat.png);
-            background-size:133px 280px;
-            height:280px;
-            width:133px;
-
-            @media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)
-              background: url(../images/kickbitAppIphoneFlat@2x.png);
-              background-size:133px 280px;
-
-
-  #kickbitApp
-    &.workSection
-      @media only screen and (min-width: 640px)
-        width:400px;
-
-      @media only screen and (min-width: 920px)
-        width:100%;
-        float:left;
 
   #bop
+    display: none;
+
+    @media only screen and (min-width: 640px)
+      display: block;
+
     .workSection
       &Info
         @media only screen and (min-width: 920px)
@@ -691,6 +648,11 @@ section
               background-size:133px 280px;
 
   #lifelock
+    display: none;
+
+    @media only screen and (min-width: 640px)
+      display: block;
+
     &.workSection
       .hamburger
         right: 0;
