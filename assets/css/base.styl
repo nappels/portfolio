@@ -145,7 +145,10 @@ section
   z-index: 4;
   float: left;
   background: $white;
-  transition:none;
+  transition: left .4s ease;
+
+  &.nav-open
+    left: -235px;
 
   @media only screen and (min-width:850px)
     left:0 !important;
@@ -157,8 +160,11 @@ section
   background:#f8f8f8;
   border:1px solid #e4e4e4;
   z-index:10;
-  transition:none;
+  transition: left .4s ease;
   position:fixed;
+
+  &.nav-open
+    left: -235px;
 
   @media only screen and (min-width:850px)
     position:fixed;

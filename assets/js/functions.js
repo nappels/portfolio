@@ -10,24 +10,16 @@
 			return {
 				open: function() {
 					var self = this;
-					$('.wrapper').animate({
-						'left': '-235px'
-					},400);
-					$('.header').animate({
-						'left': '-235px'
-					},400);
+					$('.wrapper').addClass('nav-open');
+					$('.header').addClass('nav-open');
 					// Set toggle to true
 					isModalOpen = true;
 					// Bind a click handler to the wrapper to close the click handler
 					$('.wrapper').on('click', function(){ self.close(); });
 				},
 				close: function() {
-					$('.wrapper').animate({
-						'left': '0'
-					},400);
-					$('.header').animate({
-						'left': '0'
-					},400);
+					$('.wrapper').removeClass('nav-open');
+					$('.header').removeClass('nav-open');
 					// Set toggle key to false
 					isModalOpen = false;
 					// Unbind the click on the wrapper to save memory
@@ -63,12 +55,12 @@
 					// Scroll Down
 					scrollIntent = scrollTop - 50;
 					if (scrollTop > 100) {
-						$('.header').slideUp(300);
+						$('.header').finish().slideUp(300);
 					}
 				}
 				else if (scrollTop < scrollIntent) {
 					// Scroll Up
-					$('.header').slideDown(300);
+					$('.header').finish().slideDown(300);
 				}
 				lastScrollTop = scrollTop;
 			});
